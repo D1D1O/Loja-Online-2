@@ -48,7 +48,12 @@ class CategoryScreen extends StatelessWidget {
                         return ProducTile("grid",ProductData.fromDocument(snapshot.data.documents[index]));
                         }
                     ),
-                    Container(color: Colors.green)
+                    ListView.builder(
+                        padding: EdgeInsets.all(4.0),
+                        itemCount: snapshot.data.documents.length,
+                        itemBuilder: (context,index){
+                          return ProducTile("list", ProductData.fromDocument(snapshot.data.documents[index]));
+                        } )
                   ]);
           }
         )
