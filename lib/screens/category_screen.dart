@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:lojavirtual2/datas/product_data.dart';
+import 'package:lojavirtual2/tiles/product_tile.dart';
 
 class CategoryScreen extends StatelessWidget {
   final DocumentSnapshot snapshot;
