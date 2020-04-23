@@ -21,7 +21,5 @@ class ProductData{
     images = snapshot.data["images"];
     sizes = snapshot.data["sizes"];
 
-
-
   }
 }
