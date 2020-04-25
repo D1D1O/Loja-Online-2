@@ -52,8 +52,20 @@ class LoginScreen extends StatelessWidget {
                 padding: EdgeInsets.zero,
               ),
             ),
-         SizedBox(height: 16.0,),
-
+            SizedBox(
+              height: 16.0,
+            ),
+            RaisedButton(
+              child: Text(
+                "Entrar",
+                style: TextStyle(
+                  fontSize: 18.0,
+                ),
+              ),
+              textColor: Colors.white,
+              color: Theme.of(context).primaryColor,
+              onPressed: (){},
+            )
           ],
         ),
       ),
