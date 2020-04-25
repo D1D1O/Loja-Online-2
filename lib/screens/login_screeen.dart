@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {
+  final _formKey =  GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -22,6 +23,7 @@ class LoginScreen extends StatelessWidget {
         ],
       ),
       body: Form(
+        key: _formKey,
         child: ListView(
           padding: EdgeInsets.all(16.0),
           children: <Widget>[
@@ -31,6 +33,9 @@ class LoginScreen extends StatelessWidget {
             TextFormField(
               decoration: InputDecoration(hintText: "E-mail"),
               keyboardType: TextInputType.emailAddress,
+              validator: (text){
+                if(text.isEmpty || !text.contains("@")) return "E-mail inválido!";
+              },
             ),
             SizedBox(
               height: 16.0,
@@ -40,6 +45,9 @@ class LoginScreen extends StatelessWidget {
                 hintText: "Senha",
               ),
               obscureText: true,
+              validator: (text){
+                if(text.isEmpty || text.length < 6) return "senha inválida!";
+              },
             ),
             Align(
               alignment: Alignment.centerRight,
@@ -55,16 +63,23 @@ class LoginScreen extends StatelessWidget {
             SizedBox(
               height: 16.0,
             ),
-            RaisedButton(
-              child: Text(
-                "Entrar",
-                style: TextStyle(
-                  fontSize: 18.0,
+            SizedBox(
+              height: 44,
+              child: RaisedButton(
+                child: Text(
+                  "Entrar",
+                  style: TextStyle(
+                    fontSize: 18.0,
+                  ),
                 ),
+                textColor: Colors.white,
+                color: Theme.of(context).primaryColor,
+                onPressed: (){
+                  if(_formKey.currentState.validate()){
+
+                  }
+                },
               ),
-              textColor: Colors.white,
-              color: Theme.of(context).primaryColor,
-              onPressed: (){},
             )
           ],
         ),
