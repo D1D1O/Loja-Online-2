@@ -71,7 +71,7 @@ class CustomDrawer extends StatelessWidget {
                                     Navigator.of(context).push(MaterialPageRoute(
                                         builder: (context) => LoginScreen()));
                                   else
-                                    model.signOut();
+                                    model.singOut();
                                 },
                               )
                             ],
